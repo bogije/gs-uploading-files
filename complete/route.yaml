@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app: bogije-gs-uploading-files
+    chart: bogije-gs-uploading-files
+    heritage: Tiller
+    release: bogije-gs-uploading-files
+  name: bogije-gs-uploading-files
+  namespace: __PROJECT__
+spec:
+  host: bogije-gs-uploading-files-__PROJECT__.apps.muthu8.perspectadojodevops.com
+  port:
+    targetPort: http
+  subdomain: ""
+  to:
+    kind: Service
+    name: bogije-gs-uploading-files
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress: null

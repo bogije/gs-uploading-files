@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: bogije-gs-uploading-files
+    chart: bogije-gs-uploading-files-0.0.1
+    heritage: Tiller
+    release: bogije-gs-uploading-files
+  name: bogije-gs-uploading-files
+  namespace: __PROJECT__
+spec:
+  type: "ClusterIP"
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: bogije-gs-uploading-files
+    release: bogije-gs-uploading-files

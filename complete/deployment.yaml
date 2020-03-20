@@ -1,0 +1,42 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: bogije-gs-uploading-files
+    chart: bogije-gs-uploading-files-0.0.1
+    heritage: Tiller
+    release: bogije-gs-uploading-files
+  name: bogije-gs-uploading-files
+  namespace: __PROJECT__
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: bogije-gs-uploading-files
+  template:
+    metadata:
+      labels:
+        app: bogije-gs-uploading-files
+        release: bogije-gs-uploading-files
+        deploymentconfig: bogije-gs-uploading-files
+    spec:
+      imagePullSecrets:
+      - name: docker-registry-credentials
+      containers:
+        - name: bogije-gs-uploading-files
+          image: "__IMAGE_TAG__"
+          imagePullPolicy: "Always"
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            tcpSocket:
+              port: http
+            initialDelaySeconds: 600
+            timeoutSeconds: 60
+          readinessProbe:
+            tcpSocket:
+              port: http
+          resources:
+            {}
