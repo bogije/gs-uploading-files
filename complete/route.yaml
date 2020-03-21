@@ -10,7 +10,7 @@ metadata:
   name: bogije-gs-uploading-files
   namespace: __PROJECT__
 spec:
-  host: bogije-gs-uploading-files-__PROJECT__.apps.muthu8.perspectadojodevops.com
+  host: bogije-gs-uploading-files-__PROJECT__.apps.muthu9.perspectadojodevops.com
   port:
     targetPort: http
   subdomain: ""
