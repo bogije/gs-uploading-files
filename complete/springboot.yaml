@@ -81,10 +81,10 @@ items:
   spec:
     tls:
     - hosts:
-      - "bogije-gs-uploading-files.__PROJECT__.green.perspectatechdemos.com"
-      secretName: "green-perspectatechdemos-com-crt"
+      - "bogije-gs-uploading-files.__PROJECT__.brown.perspectatechdemos.com"
+      secretName: "brown-perspectatechdemos-com-crt"
     rules:
-    - host: bogije-gs-uploading-files.__PROJECT__.green.perspectatechdemos.com
+    - host: bogije-gs-uploading-files.__PROJECT__.brown.perspectatechdemos.com
       http:
         paths:
         - path: /
@@ -99,7 +99,7 @@ items:
     namespace: __PROJECT__
   spec:
     hosts:
-    - "bogije-gs-uploading-files.__PROJECT__.green.perspectatechdemos.com"
+    - "bogije-gs-uploading-files.__PROJECT__.brown.perspectatechdemos.com"
     gateways:
     - __PROJECT__-istio-gateway
     http:
